@@ -31,3 +31,49 @@ export default function Home() {
     </div>
   );
 }
+
+/* TO IMPLEMENT:
+
+--------------------------
+
+Warum wir?
+Element: kurze Absätze oder Bulletpoints für Vertrauen
+
+Erfahrung & Sicherheit: Geschultes Personal, modernste Ausrüstung
+
+Zuverlässigkeit: Termine, die eingehalten werden
+
+Nachhaltigkeit: Wir unterstützen den verantwortungsvollen Umgang mit Batterien
+
+Transparenz: Klare Dokumentation für jede Abholung
+
+--------------------------
+
+Kontakt / Call-to-Action
+Element: Kontaktbuttons für Mobile First
+
+Text:
+„Bereit, Ihre Batterien sicher abholen zu lassen? Kontaktieren Sie uns direkt!“
+
+Buttons:
+
+„Anrufen“ → Telefon-Link
+
+„Mail senden“ → Mailto-Link
+
+Optional: „Anfrageformular öffnen“ → Popup oder neue Seite
+
+--------------------------
+
+Footer / Kurzinformation
+Element: kurzer Footer-Text
+
+Firmenname / Logo
+
+Kurzer Hinweis auf ADR-Zertifizierung
+
+Impressum & Datenschutz-Link
+
+--------------------------
+
+*/
