@@ -4,11 +4,14 @@ import { useState, useRef } from 'react';
 import Button from "@/components/Button";
 import { Phone } from "lucide-react";
 import { phone } from "@/lib/content";
+import Lottie from "lottie-react";
+import formSubmitAnimation from "@/public/animations/formSubmit.json";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState("");
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [playAnimation, setPlayAnimation] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,6 +75,7 @@ export default function ContactForm() {
       console.error(err);
     } finally {
       setLoading(false);
+      setPlayAnimation(true);
     }
   };
 
@@ -79,108 +83,121 @@ export default function ContactForm() {
     <div>
         <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Kontaktieren Sie uns</h2>
-          <form onSubmit={handleSubmit} noValidate className="grid gap-4 md:grid-cols-2">
+          {playAnimation ? (
+            <Lottie
+              animationData={formSubmitAnimation}
+              loop={false}
+              autoplay={playAnimation}
+              style={{ width: 200, height: 200 }}
+            />
+          ) : (
             <div>
-              <label className="block text-sm mb-1" htmlFor="name">
-                Name:*
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                placeholder="Max Mustermann"
-                className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
-              />
+                <form onSubmit={handleSubmit} noValidate className="grid gap-4 md:grid-cols-2">
+                <div>
+                  <label className="block text-sm mb-1" htmlFor="name">
+                    Name:*
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Max Mustermann"
+                    className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1" htmlFor="email">
+                    E-Mail:*
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="max@beispiel.de"
+                    className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1" htmlFor="phone">
+                    Telefon:
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+49 171 1234567"
+                    className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1" htmlFor="company">
+                    Firma:
+                  </label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    placeholder="Firma GmbH"
+                    className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm mb-1" htmlFor="subject">
+                    Anliegen:
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                  >
+                    <option value="allgemein">Allgemeine Anfrage</option>
+                    <option value="miete">Mietanfrage Transportbox</option>
+                    <option value="support">Transportdienstleistung</option>
+                    <option value="kooperation">Recycling</option>
+                    <option value="rechnung">Sonstiges</option>
+                  </select>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm mb-1" htmlFor="message">
+                    Nachricht:*
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    placeholder="Ihre Nachricht..."
+                    className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none min-h-[120px]"
+                  />
+                </div>
+
+                <p className="text-sm text-gray-600">
+                  Durch das Absenden stimme ich der Speicherung und Verarbeitung meiner Daten durch diese Webseite zu.
+                </p>
+
+                <p className="text-sm text-gray-500 md:col-span-2">
+                  {formError ? (
+                    <span className="text-red-500">{formError}</span>
+                  ) : (
+                    '* Pflichtfelder'
+                  )}
+                </p>
+
+                <Button content={!loading ? 'Nachricht senden' : 'wird gesendet...'} />
+              </form>
+              <br />
+              <a href={`tel:${phone}`}>
+                <Button content="Oder rufen Sie an" icon={<Phone size={18} />} color="var(--accent-3)" />
+              </a>
             </div>
+          )}
 
-            <div>
-              <label className="block text-sm mb-1" htmlFor="email">
-                E-Mail:*
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="max@beispiel.de"
-                className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm mb-1" htmlFor="phone">
-                Telefon:
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="+49 171 1234567"
-                className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm mb-1" htmlFor="company">
-                Firma:
-              </label>
-              <input
-                id="company"
-                name="company"
-                type="text"
-                placeholder="Firma GmbH"
-                className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
-              />
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="block text-sm mb-1" htmlFor="subject">
-                Anliegen:
-              </label>
-              <select
-                id="subject"
-                name="subject"
-                className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
-              >
-                <option value="allgemein">Allgemeine Anfrage</option>
-                <option value="miete">Mietanfrage Transportbox</option>
-                <option value="support">Transportdienstleistung</option>
-                <option value="kooperation">Recycling</option>
-                <option value="rechnung">Sonstiges</option>
-              </select>
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="block text-sm mb-1" htmlFor="message">
-                Nachricht:*
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                placeholder="Ihre Nachricht..."
-                className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none min-h-[120px]"
-              />
-            </div>
-
-            <p className="text-sm text-gray-600">
-              Durch das Absenden stimme ich der Speicherung und Verarbeitung meiner Daten durch diese Webseite zu.
-            </p>
-
-            <p className="text-sm text-gray-500 md:col-span-2">
-              {formError ? (
-                <span className="text-red-500">{formError}</span>
-              ) : (
-                '* Pflichtfelder'
-              )}
-            </p>
-
-            <Button content={!loading ? 'Nachricht senden' : 'wird gesendet...'} />
-          </form>
-          <a href={`tel:${phone}`}>
-            <Button content="Oder rufen Sie an" icon={<Phone size={18} />} color="var(--accent-3)" />
-          </a>
         </section>
     </div>
   );
