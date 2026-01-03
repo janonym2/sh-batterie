@@ -157,10 +157,10 @@ export default function ContactForm() {
                     className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
                   >
                     <option value="allgemein">Allgemeine Anfrage</option>
-                    <option value="miete">Mietanfrage Transportbox</option>
-                    <option value="support">Transportdienstleistung</option>
-                    <option value="kooperation">Recycling</option>
-                    <option value="rechnung">Sonstiges</option>
+                    <option value="transport">Batterie Transport</option>
+                    <option value="entsorgung">Batterie Entsorgung</option>
+                    <option value="box-mieten">Mietanfrage Transportbox</option>
+                    <option value="sonstiges">Sonstiges</option>
                   </select>
                 </div>
 
