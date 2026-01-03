@@ -160,7 +160,6 @@ export default function ContactForm() {
                     <option value="transport">Batterie Transport</option>
                     <option value="entsorgung">Batterie Entsorgung</option>
                     <option value="box-mieten">Mietanfrage Transportbox</option>
-                    <option value="sonstiges">Sonstiges</option>
                   </select>
                 </div>
 
