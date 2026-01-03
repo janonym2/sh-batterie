@@ -9,7 +9,7 @@ import AccordionBulletPoints from "@/components/AccordionBulletPoints";
 export default function Services() {
   return (
     <div>
-      <Headline content={`Unsere Leistungen`} imageSrc="/pic03.webp" />
+      <Headline content={`Unsere Leistungen`} imageSrc="/pic11.webp" />
 
       <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
         <AccordionBulletPoints
