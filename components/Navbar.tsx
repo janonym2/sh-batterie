@@ -1,22 +1,21 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; // Burger-Icon
+import { Menu, X } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 
 type NavbarProps = {
-  pPhone?: string; // optional
-  pEmail?: string; //optional
+  phone?: string;
+  email?: string;
 };
 
-export default function Navbar({ pPhone, pEmail}: NavbarProps) {
+export default function Navbar({ phone, email}: NavbarProps) {
 
   const [isSmall, setIsSmall] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const [phoneText, setPhoneText] = useState("");
+  const [emailText, setEmailText] = useState("");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -28,8 +27,8 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
   }, []);
 
   useEffect(() => {
-    setPhone(pPhone ?? "");
-    setEmail(pEmail ?? "");
+    setPhoneText(phone ?? "");
+    setEmailText(email ?? "");
 
   }, []);
 
@@ -70,19 +69,19 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
               <li>
                 <span className="text-[var(--accent)]">Mobil:</span>{" "}
                 <a
-                  href={`tel:${phone}`}
+                  href={`tel:${phoneText}`}
                   className="hover:text-[var(--accent)]"
                 >
-                  {phone}
+                  {phoneText}
                 </a>
               </li>
               <li>
                 <span className="text-[var(--accent)]">E-Mail:</span>{" "}
                 <a
-                  href={`mailto:${email}`}
+                  href={`mailto:${emailText}`}
                   className="hover:text-[var(--accent)]"
                 >
-                  {email}
+                  {emailText}
                 </a>
               </li>
             </ul>

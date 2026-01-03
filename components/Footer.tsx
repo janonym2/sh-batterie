@@ -46,7 +46,7 @@ export default function Footer() {
           </li>
           <span className="hidden md:inline">|</span>
           <li>
-            <a href="/terms" className="hover:text-[var(--accent-2)]">
+            <a href="#terms" className="hover:text-[var(--accent-2)]">
               Mietbedingungen
             </a>
           </li>

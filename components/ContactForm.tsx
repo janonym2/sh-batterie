@@ -2,6 +2,8 @@
 
 import { useState, useRef } from 'react';
 import Button from "@/components/Button";
+import { Phone } from "lucide-react";
+import { phone } from "@/lib/content";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -176,6 +178,9 @@ export default function ContactForm() {
 
             <Button content={!loading ? 'Nachricht senden' : 'wird gesendet...'} />
           </form>
+          <a href={`tel:${phone}`}>
+            <Button content="Oder rufen Sie an" icon={<Phone size={18} />} color="var(--accent-3)" />
+          </a>
         </section>
     </div>
   );

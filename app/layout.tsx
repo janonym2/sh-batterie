@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { inter } from './fonts';
+import { phone, email } from "@/lib/content";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Navbar pPhone={`0177 2247053`} pEmail={`sh-mobile@web.de`} />
+        <Navbar phone={phone} email={email} />
         <main>{children}</main>
         <Footer />
       </body>

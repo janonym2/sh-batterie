@@ -23,3 +23,6 @@ export const content = {
     'Transparenz: Klare Dokumentation für jede Abholung'
   ],
 };
+
+export const phone = '0177 2247053';
+export const email = 'sh-mobile@web.de';
