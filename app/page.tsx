@@ -16,7 +16,11 @@ export default function Home() {
       <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
         <h1 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Sichere Entsorgung & Transport von Elektroauto-Batterien</h1>
         <p className="text-lg">Wir übernehmen den sicheren Transport und die fachgerechte Entsorgung von Lithium-Ionen-Batterien – nach allen ADR-Vorschriften. Schnell, zuverlässig und professionell.</p>
-        <Button content="Jetzt Angebot anfragen" onClick={() => router.push('/anfrage')} />
+        <Button
+          content="Jetzt Angebot anfragen"
+          color="var(--accent-3)"
+          onClick={() => router.push('/anfrage')}
+        />
       </section>
 
       <div className="md:grid md:grid-cols-2">
