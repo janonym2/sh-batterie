@@ -54,7 +54,7 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
 
           <div className="text-right">
             <ul
-              className={`flex gap-8 text-sm font-bold transition-opacity duration-300 ${
+              className={`flex gap-8 text-sm transition-opacity duration-300 ${
                 isSmall ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -87,8 +87,8 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
               </li>
             </ul>
             <ul
-              className={`flex gap-12 text-[20px] font-bold mt-2 justify-end transition-all duration-300 ${
-                isSmall ? "translate-y-[-20px]" : ""
+              className={`flex gap-12 text-[20px] justify-end transition-all duration-300 ${
+                isSmall ? "translate-y-[-20px] mt-4" : "mt-2"
               }`}
             >
               <li>

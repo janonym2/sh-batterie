@@ -37,7 +37,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Navbar pPhone={`0049...`} pEmail={`email@example.de`} />
+        <Navbar pPhone={`0177 2247053`} pEmail={`sh-mobile@web.de`} />
         <main>{children}</main>
         <Footer />
       </body>

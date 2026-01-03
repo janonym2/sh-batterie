@@ -12,8 +12,8 @@ export default function Footer() {
       />
 
       {/* Content */}
-      <div className="text-white py-8 px-[5%] md:px-15 text-sm md:text-sm">
-        <p className="mb-6">Platzhalter GmbH · Musterstraße 1, 12345 Musterstadt</p>
+      <div className="text-[var(--lightgray)] py-8 px-[5%] md:px-15 text-sm md:text-sm">
+        <p className="mb-6">SH-Mobile GmbH · Ruhrau 33, 45279 Essen, Deutschland</p>
         <ul className="md:flex md:items-center md:gap-6 space-y-6 md:space-y-0 text-sm md:text-base md:justify-between">
           <span className="hidden md:inline">|</span>
           <li>
@@ -41,7 +41,7 @@ export default function Footer() {
           </li>
           <span className="hidden md:inline">|</span>
         </ul>
-        <p className="my-6 text-xs">&copy; 2025 Platzhalter GmbH. Alle Rechte vorbehalten.</p>
+        <p className="my-6 text-xs">&copy; 2026 SH-Mobile GmbH. Alle Rechte vorbehalten.</p>
       
       </div>
     </footer>
