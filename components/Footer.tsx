@@ -28,12 +28,6 @@ export default function Footer() {
         <ul className="md:flex md:items-center md:gap-6 space-y-6 md:space-y-0 text-sm md:text-base md:justify-between">
           <span className="hidden md:inline">|</span>
           <li>
-            <a href="/cookie-pref" className="hover:text-[var(--accent-2)]">
-              Cookie-Einstellungen
-            </a>
-          </li>
-          <span className="hidden md:inline">|</span>
-          <li>
             <a href="/impressum" className="hover:text-[var(--accent-2)]">
               Impressum
             </a>

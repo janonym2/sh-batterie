@@ -59,11 +59,11 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
               }`}
             >
               <li>
-                <a href="/?lang=de" className="text-[var(--accent)]">
+                <a href="#de" className="text-[var(--accent)]">
                   DE
                 </a>{" "}
                 |{" "}
-                <a href="/?lang=en" className="hover:text-[var(--accent)]">
+                <a href="#en" className="hover:text-[var(--accent)]">
                   EN
                 </a>
               </li>
@@ -97,13 +97,13 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
                 </a>
               </li>
               <li>
-                <a href="/products" className={pathname === '/products' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'}>
-                  Produkte
+                <a href="/about-us" className={pathname === '/about-us' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'}>
+                  Über uns
                 </a>
               </li>
               <li>
-                <a href="/about-us" className={pathname === '/about-us' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'}>
-                  Über uns
+                <a href="/leistungen" className={pathname === '/leistungen' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'}>
+                  Leistungen
                 </a>
               </li>
               <li>
@@ -154,13 +154,13 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
               </a>
             </li>
             <li>
-              <a href="/products" className={pathname === '/products' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'} onClick={() => setMenuOpen(false)}>
-                Produkte
+              <a href="/about-us" className={pathname === '/about-us' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'} onClick={() => setMenuOpen(false)}>
+                Über uns
               </a>
             </li>
             <li>
-              <a href="/about-us" className={pathname === '/about-us' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'} onClick={() => setMenuOpen(false)}>
-                Über uns
+              <a href="/leistungen" className={pathname === '/leistungen' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'} onClick={() => setMenuOpen(false)}>
+                Leistungen
               </a>
             </li>
             <li>
@@ -169,11 +169,11 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
               </a>
             </li>
             <li className="text-sm mt-2">
-              <a href="/?lang=de" className="text-[var(--accent)]">
+              <a href="#de" className="text-[var(--accent)]">
                 DE
               </a>{" "}
               |{" "}
-              <a href="/?lang=en" className="hover:text-[var(--accent)]">
+              <a href="#en" className="hover:text-[var(--accent)]">
                 EN
               </a>
             </li>

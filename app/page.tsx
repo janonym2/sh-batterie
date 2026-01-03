@@ -5,24 +5,9 @@ import Button from "@/components/Button";
 import BulletPoints from "@/components/BulletPoints";
 import CallToAction from "@/components/CallToAction";
 import { useRouter } from "next/navigation";
+import { content } from "@/lib/content";
 
 export default function Home() {
-  const leistungen = [
-    "Transport nach ADR: Vollständig zertifiziert und sicher",
-    "Entsorgung & Recycling: Umweltgerecht, nach aktuellen Standards",
-    "Schnelle Abholung: Flexibel an Ihrem Standort",
-    "Transparente Prozesse: Jeder Schritt dokumentiert"
-  ];
-
-  const warumWir = [    
-    'Erfahrung & Sicherheit: Geschultes Personal, modernste Ausrüstung',
-    'Zuverlässigkeit: Termine, die eingehalten werden',
-    'Nachhaltigkeit: Wir unterstützen den verantwortungsvollen Umgang mit Batterien',
-    'Transparenz: Klare Dokumentation für jede Abholung'
-  ];
-
-  const miniText = "Wir kümmern uns darum, dass alte Batterien nicht zur Gefahr werden – für Sie und die Umwelt.";
-
   const router = useRouter();
 
   return (
@@ -39,20 +24,23 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Unsere Leistungen
           </h2>
-          <BulletPoints items={leistungen} miniText={miniText} />
+          <BulletPoints
+            items={content.leistungen.items.map(item => item.description)}
+            miniText={content.leistungen.miniText}
+          />
         </section>
 
         <section className="px-[5%] md:px-15 py-10 bg-[var(--accent-2)]">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Warum wir?
           </h2>
-          <BulletPoints items={warumWir}/>
+          <BulletPoints items={content.warumWir}/>
         </section>
       </div>
 
       <section className="px-[5%] md:px-15 py-10 bg-[var(--accent-3)] text-[var(--lightgray)]">
         <CallToAction
-          title={`Bereit, Ihre Batterien sicher abzuholen? Kontaktieren Sie uns direkt!`}
+          title={`Bereit, Ihre Batterien sicher abzuholenen zu lassen? Kontaktieren Sie uns direkt!`}
           phone="0177 2247053"
           email="sh-mobile@web.de"
         />
