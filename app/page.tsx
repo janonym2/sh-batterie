@@ -24,28 +24,27 @@ export default function Home() {
   return (
     <div>
       <Headline content={`Startseite`} />
-      <section className="px-[5%] pd:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
+      <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
         <h1 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Sichere Entsorgung & Transport von Elektroauto-Batterien</h1>
         <p className="text-lg">Wir übernehmen den sicheren Transport und die fachgerechte Entsorgung von Lithium-Ionen-Batterien – nach allen ADR-Vorschriften. Schnell, zuverlässig und professionell.</p>
         <Button content="Jetzt Angebot anfragen" onClick={() => alert("Hallo!")} />
       </section>
 
-      <div className="px-[5%] pd:px-15 py-10 md:grid md:grid-cols-2 md:gap-6">
-        <section className="bg-[var(--accent-2)] p-6 md:transition-transform md:hover:scale-105">
+      <div className="md:grid md:grid-cols-2">
+        <section className="px-[5%] md:px-15 py-10 bg-[var(--accent-2)]">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Unsere Leistungen
           </h2>
           <BulletPoints items={leistungen} miniText={miniText} />
         </section>
 
-        <section className="bg-[var(--accent)] text-[var(--lightgray)] p-6 md:transition-transform md:hover:scale-105">
+        <section className="px-[5%] md:px-15 py-10 bg-[var(--accent)] text-[var(--lightgray)]">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Warum wir?
           </h2>
           <BulletPoints items={warumWir}/>
         </section>
       </div>
-
     </div>
   );
 }
