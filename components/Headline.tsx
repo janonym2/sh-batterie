@@ -6,15 +6,16 @@ import Image from "next/image";
 
 type Props = {
   content?: string;
+  imageSrc?: string;
 };
 
-export default function Headline({ content }: Props) {
+export default function Headline({ content, imageSrc = '/pic01.webp' }: Props) {
   return (
     <div className="w-full">
       <div className="relative w-full">
         <div className="relative w-full aspect-[4000/2304] overflow-hidden md:aspect-[4000/1400]">
           <Image
-            src="/pic01.webp"
+            src={imageSrc}
             alt="transport vehicle"
             fill
             sizes="100vw"

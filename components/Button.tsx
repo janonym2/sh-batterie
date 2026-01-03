@@ -1,15 +1,19 @@
 "use client";
 
+import { ReactNode } from "react";
+
 type Props = {
   content?: string;
+  icon?: ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-export default function Button({ content, onClick }: Props) {
+export default function Button({ content, icon, onClick }: Props) {
   return (
     <button
       type="submit"
       className="
+        flex items-center justify-center gap-2
         text-white 
         font-bold 
         shadow 
@@ -22,11 +26,11 @@ export default function Button({ content, onClick }: Props) {
         min-w-[150px] 
         h-auto 
         text-center
-        "
-
+      "
       onClick={onClick}
     >
-      {content}
+      {icon}
+      <span>{content}</span>
     </button>
   );
 }

@@ -3,6 +3,7 @@
 import Headline from "@/components/Headline";
 import Button from "@/components/Button";
 import BulletPoints from "@/components/BulletPoints";
+import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
   const leistungen = [
@@ -31,41 +32,29 @@ export default function Home() {
       </section>
 
       <div className="md:grid md:grid-cols-2">
-        <section className="px-[5%] md:px-15 py-10 bg-[var(--accent-2)]">
+        <section className="px-[5%] md:px-15 py-10 bg-[var(--accent)] text-[var(--lightgray)]">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Unsere Leistungen
           </h2>
           <BulletPoints items={leistungen} miniText={miniText} />
         </section>
 
-        <section className="px-[5%] md:px-15 py-10 bg-[var(--accent)] text-[var(--lightgray)]">
+        <section className="px-[5%] md:px-15 py-10 bg-[var(--accent-2)]">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Warum wir?
           </h2>
           <BulletPoints items={warumWir}/>
         </section>
       </div>
+
+      <section className="px-[5%] md:px-15 py-10 bg-[var(--accent-3)] text-[var(--lightgray)]">
+        <CallToAction title={`Bereit, Ihre Batterien sicher abzuholen? Kontaktieren Sie uns direkt!`} />
+      </section>
     </div>
   );
 }
 
 /* TO IMPLEMENT:
-
---------------------------
-
-Kontakt / Call-to-Action
-Element: Kontaktbuttons für Mobile First
-
-Text:
-„Bereit, Ihre Batterien sicher abholen zu lassen? Kontaktieren Sie uns direkt!“
-
-Buttons:
-
-„Anrufen“ → Telefon-Link
-
-„Mail senden“ → Mailto-Link
-
-Optional: „Anfrageformular öffnen“ → Popup oder neue Seite
 
 --------------------------
 

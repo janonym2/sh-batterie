@@ -107,7 +107,7 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
                 </a>
               </li>
               <li>
-                <a href="/contact" className={pathname === '/contact' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'}>
+                <a href="/kontakt" className={pathname === '/kontakt' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'}>
                   Kontakt
                 </a>
               </li>
@@ -141,7 +141,7 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Mobile Menü */}
+        {/* Mobile Menue */}
         <div
           className={`absolute top-full left-0 w-full bg-[var(--lightgray)] shadow-md transition-all duration-300 overflow-hidden ${
             menuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
@@ -164,7 +164,7 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
               </a>
             </li>
             <li>
-              <a href="/contact" className={pathname === '/contact' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'} onClick={() => setMenuOpen(false)}>
+              <a href="/kontakt" className={pathname === '/kontakt' ? 'text-[var(--accent)]' : 'hover:text-[var(--accent)]'} onClick={() => setMenuOpen(false)}>
                 Kontakt
               </a>
             </li>
