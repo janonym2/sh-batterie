@@ -18,7 +18,6 @@ export default function Home() {
         <p className="text-lg">Wir übernehmen den sicheren Transport und die fachgerechte Entsorgung von Lithium-Ionen-Batterien – nach allen ADR-Vorschriften. Schnell, zuverlässig und professionell.</p>
         <Button
           content="Jetzt Angebot anfragen"
-          color="var(--accent-3)"
           onClick={() => router.push('/anfrage')}
         />
       </section>
