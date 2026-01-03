@@ -30,19 +30,22 @@ export default function Home() {
         <Button content="Jetzt Angebot anfragen" onClick={() => alert("Hallo!")} />
       </section>
 
-      <section className="px-[5%] pd:px-15 py-10 bg-[var(--accent-2)]">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Unsere Leistungen
-        </h2>
-        <BulletPoints items={leistungen} miniText={miniText} />
-      </section>
+      <div className="px-[5%] pd:px-15 py-10 md:grid md:grid-cols-2 md:gap-6">
+        <section className="bg-[var(--accent-2)] p-6 md:transition-transform md:hover:scale-105">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Unsere Leistungen
+          </h2>
+          <BulletPoints items={leistungen} miniText={miniText} />
+        </section>
 
-      <section className="px-[5%] pd:px-15 py-10 bg-[var(--accent)] text-[var(--lightgray)]">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Warum wir?
-        </h2>
-        <BulletPoints items={warumWir}/>
-      </section>
+        <section className="bg-[var(--accent)] text-[var(--lightgray)] p-6 md:transition-transform md:hover:scale-105">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Warum wir?
+          </h2>
+          <BulletPoints items={warumWir}/>
+        </section>
+      </div>
+
     </div>
   );
 }
