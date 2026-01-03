@@ -2,12 +2,17 @@
 
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import Button from "@/components/Button";
+import { useRouter } from "next/navigation";
 
 type Props = {
   title?: string;
+  phone: string;
+  email: string;
 };
 
-export default function CallToAction({ title }: Props) {
+export default function CallToAction({ title, phone, email }: Props) {
+  const router = useRouter();
+
   return (
     <div>
         {!title ? '' : (
@@ -16,9 +21,17 @@ export default function CallToAction({ title }: Props) {
             </h2>
         )}
         <div className="flex flex-col gap-4 pt-2">
-          <Button content="Anrufen" onClick={() => alert("Hallo!")} icon={<Phone size={18} />}/>
-          <Button content="Mail senden" onClick={() => alert("Hallo!")} icon={<Mail size={18} />} />
-          <Button content="Anfrageformular" onClick={() => alert("Hallo!")} icon={<MessageSquare size={18} />} />
+          <a href={`tel:${phone}`}>
+            <Button content="Anrufen" icon={<Phone size={18} />}/>
+          </a>
+          <a href={`mailto:${email}?subject=Batterie-Anfrage`}>
+            <Button content="Mail senden" icon={<Mail size={18} />} />
+          </a>
+          <Button
+            content="Anfrageformular"
+            onClick={() => router.push('/anfrage')}
+            icon={<MessageSquare size={18} />}
+          />
         </div>
     </div>
   );

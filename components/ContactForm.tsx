@@ -1,7 +1,9 @@
 "use client";
-import { useEffect, useState, useRef } from 'react';
 
-export default function ContactFormular() {
+import { useState, useRef } from 'react';
+import Button from "@/components/Button";
+
+export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState("");
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -22,7 +24,7 @@ export default function ContactFormular() {
       if (isInvalid) {
         invalidFields.push(field);
 
-        // visuelles Feedback
+        // optical feedback
         if (isCheckbox) {
           field.classList.add("ring-2", "ring-red-400", "animate-shake");
         } else {
@@ -49,7 +51,7 @@ export default function ContactFormular() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/anfrage", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -59,11 +61,10 @@ export default function ContactFormular() {
           company: formData.get("company"),
           message: formData.get("message"),
           subject: formData.get("subject"),
-          privacy: formData.get("privacy"),
         }),
       });
 
-      if (!res.ok) throw new Error(`Server antwortete mit ${res.status}`);
+      if (!res.ok) throw new Error(`Server responses with ${res.status}`);
       form.reset();
     } catch (err) {
       console.error(err);
@@ -74,8 +75,7 @@ export default function ContactFormular() {
 
   return (    
     <div>
-        {/* Kontaktformular */}
-        <section className="bg-[#f7f9fc] border-t-8 border-[var(--accent)] p-8">
+        <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Kontaktieren Sie uns</h2>
           <form onSubmit={handleSubmit} noValidate className="grid gap-4 md:grid-cols-2">
             <div>
@@ -142,10 +142,10 @@ export default function ContactFormular() {
                 className="w-full bg-[var(--background)] border border-[#d6d6d6] p-2 focus:ring-2 focus:ring-[var(--accent)] outline-none"
               >
                 <option value="allgemein">Allgemeine Anfrage</option>
-                <option value="miete">Mietanfrage</option>
-                <option value="support">Support</option>
-                <option value="kooperation">Kooperation</option>
-                <option value="rechnung">Rechnung & Zahlung</option>
+                <option value="miete">Mietanfrage Transportbox</option>
+                <option value="support">Transportdienstleistung</option>
+                <option value="kooperation">Recycling</option>
+                <option value="rechnung">Sonstiges</option>
               </select>
             </div>
 
@@ -162,12 +162,9 @@ export default function ContactFormular() {
               />
             </div>
 
-            <div className="flex items-start gap-2 md:col-span-2">
-              <input id="privacy" name="privacy" type="checkbox" required className="mt-1 bg-[var(--background)]" />
-              <label htmlFor="privacy" className="text-sm text-gray-600">
-                Ich stimme der Speicherung und Verarbeitung meiner Daten durch diese Webseite zu.*
-              </label>
-            </div>
+            <p className="text-sm text-gray-600">
+              Durch das Absenden stimme ich der Speicherung und Verarbeitung meiner Daten durch diese Webseite zu.
+            </p>
 
             <p className="text-sm text-gray-500 md:col-span-2">
               {formError ? (
@@ -177,18 +174,7 @@ export default function ContactFormular() {
               )}
             </p>
 
-            <div className="md:col-span-2">
-              <button
-                type="submit"
-                className={`text-white px-6 py-2 font-bold shadow transition ${
-                    loading
-                    ? "bg-[var(--accent-2)] cursor-not-allowed"
-                    : "bg-[var(--accent)] hover:bg-[var(--accent-2)]"
-                }`}
-              >
-                {loading ? "Sende..." : "Nachricht senden"}
-              </button>
-            </div>
+            <Button content={!loading ? 'Nachricht senden' : 'wird gesendet...'} />
           </form>
         </section>
     </div>
