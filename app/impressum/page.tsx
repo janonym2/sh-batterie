@@ -3,7 +3,7 @@ import Headline from "@/components/Headline";
 export default function Imprint() {
   return (
     <div>
-        <Headline content={`Impressum`} imageSrc="/pic09.webp" />
+        <Headline content={`Impressum`} imageSrc="/pic10.webp" />
         <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--accent)]">
                 Angaben gemäß § 5 TMG:
