@@ -30,7 +30,6 @@ export default function Entsorgen() {
           email="sh-mobile@web.de"
           />
       </section>
-
     </div>
   );
 }

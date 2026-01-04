@@ -10,7 +10,7 @@ export const content = {
       {
         title: "Entsorgung & Recycling",
         description: "Entsorgung & Recycling: Umweltgerecht, nach aktuellen Standards",
-        href: "/hv-batterie-entsorgung"
+        href: "/leistungen/hv-batterie-entsorgung"
       },
       {
         title: "Transportbox mieten",
