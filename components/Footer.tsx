@@ -52,7 +52,7 @@ export default function Footer() {
           </li>
           <span className="hidden md:inline">|</span>
         </ul>
-        <p className="my-6 text-xs">&copy; 2026 SH-Mobile GmbH. Alle Rechte vorbehalten.</p>
+        <p className="my-6 text-xs md:text-center">&copy; 2026 SH-Mobile GmbH. Alle Rechte vorbehalten.</p>
       
       </div>
     </footer>
