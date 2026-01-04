@@ -53,7 +53,7 @@ export default function Navbar({ phone, email}: NavbarProps) {
 
           <div className="text-right">
             <ul
-              className={`flex gap-8 text-sm transition-opacity duration-300 ${
+              className={`flex gap-8 justify-between text-sm transition-opacity duration-300 ${
                 isSmall ? "opacity-0" : "opacity-100"
               }`}
             >
