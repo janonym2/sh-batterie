@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SH-Batterie",
-  description: "HV Batterie Transport & Entsorgung",
+  title: "HV Batterie Transport Essen & NRW | SH-Mobile GmbH",
+  description:
+    "Zertifizierter Transport von Hochvolt-Autobatterien in Essen & NRW. Vermietung von Transportboxen für HV Batterien. Schnell & sicher.",
 };
-
 
 export default function RootLayout({
   children,

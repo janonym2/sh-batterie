@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type Item = {
   title: string;
   description: string;
+  href?: string;
 };
 
 export default function AccordionBulletPoints({
@@ -16,6 +18,7 @@ export default function AccordionBulletPoints({
   miniText?: string;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const router = useRouter();
 
   return (
     <div className="space-y-6">
@@ -56,15 +59,26 @@ export default function AccordionBulletPoints({
               {/* Accordion Content */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  isOpen
-                    ? "max-h-40 opacity-100 mt-3"
-                    : "max-h-0 opacity-0"
+                  isOpen ? "max-h-60 opacity-100 mt-3" : "max-h-0 opacity-0"
                 }`}
               >
                 <p className="text-sm text-gray-700 leading-relaxed">
                   {item.description}
                 </p>
+
+                {item.href && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      router.push(item.href || '#');
+                    }}
+                    className="mt-3 inline-flex items-center text-sm font-medium text-black hover:underline hover:text-[var(--accent)]"
+                  >
+                    Mehr erfahren →
+                  </button>
+                )}
               </div>
+
             </li>
           );
         })}

@@ -1,4 +1,5 @@
 "use client";
+
 import { CheckCircleIcon } from "lucide-react";
 
 interface BulletPointsProps {

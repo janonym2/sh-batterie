@@ -4,15 +4,18 @@ export const content = {
     items: [
       {
         title: "Transport",
-        description: "Transport Ihrer Hochvolt Lithium-Ionen Akkus von A nach B: ADR zertifiziert und sicher"
+        description: "Transport Ihrer Hochvolt Lithium-Ionen Akkus von A nach B: ADR zertifiziert und sicher",
+        href: "/leistungen/hv-batterie-transport"
       },
       {
         title: "Entsorgung & Recycling",
-        description: "Entsorgung & Recycling: Umweltgerecht, nach aktuellen Standards"
+        description: "Entsorgung & Recycling: Umweltgerecht, nach aktuellen Standards",
+        href: "/hv-batterie-entsorgung"
       },
       {
         title: "Transportbox mieten",
-        description: "Transportbox mieten: Für den Transport von Werk zu Werk oder der Lagerung von Lithium-Ionen Batterien"
+        description: "Transportbox mieten: Für den Transport von Werk zu Werk oder der Lagerung von Lithium-Ionen Batterien",
+        href: "/leistungen/transportbox-mieten"
       }
     ]
   },
