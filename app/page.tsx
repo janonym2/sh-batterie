@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div>
-      <Headline content={`Startseite`} imageSrc="/pic11.webp" />
+      <Headline content={`Startseite`} imageSrc="/images/pic11.webp" />
       <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
         <h1 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Sichere Entsorgung & Transport von HV-Batterien</h1>
         <p className="text-lg">Wir übernehmen den sicheren Transport und die fachgerechte Entsorgung von HV-Batterien aus Elektroautos – nach allen ADR-Vorschriften. Schnell, zuverlässig und professionell.</p>

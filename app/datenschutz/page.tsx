@@ -3,7 +3,7 @@ import Headline from "@/components/Headline";
 export default function DataProtection() {
   return (
     <div>
-        <Headline content={`Datenschutz`} imageSrc="/pic09.webp" />
+        <Headline content={`Datenschutz`} imageSrc="/images/pic09.webp" />
         <section className="px-[5%] md:px-15 py-10 space-y-10 bg-[var(--lightgray)]">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--accent)]">
             Datenschutzerklärung

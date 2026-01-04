@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-[var(--gray)] relative">
       {/* SVG Overlay */}
       <img
-        src="/bg-footer.svg"
+        src="/images/bg-footer.svg"
         alt=""
         className="hidden md:block absolute inset-0 w-full h-full object-cover pointer-events-none"
       />

@@ -43,10 +43,10 @@ export default function Navbar({ phone, email}: NavbarProps) {
       >
         <div className="flex items-center h-full justify-between px-15 w-full">
           <Image
-            src="/brandname.svg"
+            src="/images/brandname.svg"
             alt="Brandname"
-            width={3200}
-            height={800}
+            width={1388}
+            height={438}
             className="h-[50%] w-auto"
             onClick={() => router.push("/")}
           />
@@ -122,10 +122,10 @@ export default function Navbar({ phone, email}: NavbarProps) {
       >
         {/* Logo */}
         <Image
-          src="/brandname.svg"
+          src="/images/brandname.svg"
           alt="Brandname"
-          width={800}
-          height={200}
+          width={1388}
+          height={438}
           className="h-[30px] w-auto"
           onClick={() => router.push("/")}
         />

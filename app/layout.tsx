@@ -18,14 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SH-Batterie",
-  description: "Lithium-Ionen Batterie Transport & Entsorgung",
-  icons: {
-    icon: "/favicon.ico",
-    other: [
-      { url: "/logo.svg", sizes: "385x385", type: "image/svg" },
-    ]
-  }
+  description: "HV Batterie Transport & Entsorgung",
 };
+
 
 export default function RootLayout({
   children,

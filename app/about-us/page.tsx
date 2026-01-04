@@ -3,7 +3,7 @@ import Headline from "@/components/Headline";
 export default function Services() {
   return (
     <div>
-      <Headline content={`Über Uns`} imageSrc="/pic08.webp" />
+      <Headline content={`Über Uns`} imageSrc="/images/pic08.webp" />
 
 
       <div className="md:grid md:grid-cols-2">
@@ -19,7 +19,7 @@ export default function Services() {
 
         <section>
           <img
-            src="/pic04.webp"
+            src="/images/pic04.webp"
             alt="SH-Mobile GmbH"
             className="w-full h-auto object-cover"
           />
@@ -57,7 +57,7 @@ export default function Services() {
 
       <section className="relative w-full overflow-hidden md:aspect-[4000/1400]">
         <img
-          src="/pic15-cut.webp"
+          src="/images/pic15-cut.webp"
           alt="SH-Mobile GmbH"
           className="w-full h-auto object-cover"
         />
@@ -86,7 +86,7 @@ export default function Services() {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <section className="grid grid-rows-[auto_1fr]">
           <img
-            src="/pic13.webp"
+            src="/images/pic13.webp"
             alt="SH-Mobile GmbH"
             className="w-full h-auto object-contain"
           />
@@ -103,7 +103,7 @@ export default function Services() {
 
         <section>
           <img
-            src="/pic17.webp"
+            src="/images/pic17.webp"
             alt="SH-Mobile GmbH"
             className="w-full h-auto object-contain"
           />
