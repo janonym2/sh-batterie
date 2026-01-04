@@ -31,6 +31,40 @@ export default function RootLayout({
     <html lang="de" className={inter.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "SH Mobile GmbH",
+              url: "https://sh-batterie.de",
+              logo: "https://sh-batterie.de/icon.svg",
+              image: "https://sh-batterie.de/images/brandname.svg",
+              description: "Transport von Hochvolt-Autobatterien & Vermietung von Transportboxen in Essen & NRW",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Ruhrau 33",
+                addressLocality: "Essen",
+                postalCode: "45279",
+                addressCountry: "DE"
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 51.4364476,
+                longitude: 7.1095283
+              },
+              telephone: "+49-201-87776699",
+              areaServed: "NRW",
+              priceRange: "€€",
+              openingHours: "Mo-Fr 08:00-18:00",
+              sameAs: [
+                "http://www.shmobile.de/"
+              ],
+              serviceType: ["HV Batterie Transport", "Transportbox Vermietung", "HV Batterie Entsorgung"]
+            }),
+          }}
+        />
       </head>
       <body>
         <Navbar phone={phone} email={email} />
@@ -40,5 +74,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
