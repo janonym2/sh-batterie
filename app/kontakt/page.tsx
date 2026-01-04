@@ -1,5 +1,3 @@
-"use client"
-
 import Headline from "@/components/Headline";
 import CallToAction from "@/components/CallToAction";
 
