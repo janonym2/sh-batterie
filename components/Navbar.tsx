@@ -35,10 +35,10 @@ export default function Navbar({ phone, email}: NavbarProps) {
   return (
     <div>
       {/* Platzhalter, um Content nicht zu überdecken */}
-      <div className={`h-[65px] ${isSmall ? "md:h-[75px]" : "md:h-[100px]"} transition-all duration-[var(--transition)]`} />
+      <div className={`h-[65px] ${isSmall ? "md:h-[60px]" : "md:h-[80px]"} transition-all duration-[var(--transition)]`} />
       <nav
         className={`hidden md:flex fixed top-0 w-[100%] z-50 transition-all bg-[var(--lightgray)] duration-[var(--transition)] ${
-          isSmall ? "h-[75px]" : "h-[100px]"
+          isSmall ? "h-[60px]" : "h-[80px]"
         }`}
       >
         <div className="flex items-center h-full justify-between px-15 w-full">
@@ -47,7 +47,7 @@ export default function Navbar({ phone, email}: NavbarProps) {
             alt="Brandname"
             width={1388}
             height={438}
-            className="h-[50%] w-auto"
+            className="h-[70%] w-auto"
             onClick={() => router.push("/")}
           />
 
@@ -179,7 +179,6 @@ export default function Navbar({ phone, email}: NavbarProps) {
           </ul>
         </div>
       </nav>
-
     </div>
   );
 }
