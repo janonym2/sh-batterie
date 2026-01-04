@@ -192,7 +192,7 @@ export default function ContactForm() {
               </form>
               <br />
               <a href={`tel:${phone}`}>
-                <Button content="Oder rufen Sie an" icon={<Phone size={18} />} color="var(--accent-3)" />
+                <Button content="Oder rufen Sie an" icon={<Phone size={18} />} color="var(--accent-3)" colorHover="var(--accent-3-hover)" />
               </a>
             </div>
           )}
