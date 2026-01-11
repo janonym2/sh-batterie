@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "HV Batterie Transport Essen & NRW | SH-Mobile GmbH",
   description:
     "Zertifizierter Transport von Hochvolt-Autobatterien in Essen & NRW. Vermietung von Transportboxen für HV Batterien. Schnell & sicher.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
